@@ -19,7 +19,7 @@ services:
     image: copyparty/ac:latest
     container_name: copyparty
     ports:
-      - 42380:3923
+      - 10031:3923
     volumes:
       - ./cdn:/cfg
       - ./files:/w
