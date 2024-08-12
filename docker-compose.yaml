@@ -1,0 +1,44 @@
+version: "3"
+services:
+  uploader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 10030:3000
+    environment:
+      CDN_URI: 'https://cdn.xxx.xxx'
+    volumes:
+      - ./files:/app/uploads
+    restart: always
+    networks:
+      uploaderNetwork:
+        ipv4_address: 172.30.52.2
+  
+  cdn:
+    image: copyparty/ac:latest
+    container_name: copyparty
+    ports:
+      - 42380:3923
+    volumes:
+      - ./cdn:/cfg
+      - ./files:/w
+    stop_grace_period: 15s  # thumbnailer is allowed to continue finishing up for 10s after the shutdown signal
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:3923/?reset"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s
+    restart: always
+    networks:
+      uploaderNetwork:
+        ipv4_address: 172.30.52.3
+
+networks:
+  uploaderNetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.52.0/22
+          gateway: 172.30.52.1
