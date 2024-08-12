@@ -4,7 +4,7 @@ ENV CDN_URI https://cdn.mama.ovh/
 
 WORKDIR /app
 COPY ./uploader ./
+RUN mkdir uploads
 RUN npm i
-COPY . .
 EXPOSE 3000
 CMD npm start
