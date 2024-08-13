@@ -1,6 +1,6 @@
 # file-uploader (Docker Edition)
 
-This Repository is made by the same creator from [dethMastery/file-uploader](https://github.com/dethMastery/file-uploader) for using in Docker and for anyone too lazy to write their own one :3
+This Repository is made by the same creator from [dethMastery/file-uploader](https://github.com/dethMastery/file-uploader) and [dethMastery/file-cdn](https://github.com/dethMastery/file-cdn) for using in Docker and for anyone too lazy to write their own one :3
 
 This docker compose is build from the repository and [9001/copyparty](https://github.com/9001/copyparty) to setting up this compose :D
 
