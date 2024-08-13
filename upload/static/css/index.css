@@ -1,0 +1,135 @@
+.main-container {
+  width: 100%;
+  height: 100dvh;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-upload {
+  width: 18rem;
+
+  background: whitesmoke;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-upload * {
+  padding: 0;
+  margin: 0;
+}
+
+.card-upload > div {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.card-upload > div#file-container {
+  flex-direction: row;
+}
+
+.card-upload > div#file-container > p {
+  width: 65%;
+  padding: .5rem;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  background: whitesmoke;
+  color: #2e2f2f;
+
+  border: 1px solid #2e2f2f;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.card-upload > div#file-container > label {
+  width: 30%;
+  padding: .5rem;
+
+  background: #fe6e6f;
+  color: whitesmoke;
+
+  border: 1px solid #2e2f2f;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-upload > div#file-container > label:hover {
+  opacity: .6;
+  cursor: pointer;
+  transform: scale(.9);
+}
+
+.card-upload > div#res-container {
+  gap: 1rem;
+}
+
+.card-upload > div#res-container > p {
+  text-align: center;
+
+  padding: .5rem;
+
+  border-radius: 5px;
+  border: 1px solid #2e2f2f;
+}
+
+.card-upload > div#res-container > p > a {
+  color: #2e2f2f;
+
+  display: block;
+
+  text-decoration: none;
+}
+
+.card-upload > div#res-container > p:hover {
+  padding: .4rem;
+}
+
+.card-upload > div#res-container > p > a:hover {
+  color: #404242;
+}
+
+.card-upload button {
+  background: #fe6e6f;
+  color: whitesmoke;
+  font-size: 18px;
+
+  padding: .5rem;
+
+  border: none;
+  border-radius: .5rem;
+}
+
+.card-upload button:hover {
+  opacity: .8;
+  transform: scale(.9);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-upload {
+    width: 80%;
+  }
+}
